@@ -6,7 +6,7 @@ from packaging.version import parse
 from naptha_sdk.plugins.core import NapthaPlugin
 from jinja2 import Template  # Added import for Jinja2
 
-class LangChainPlugin(NapthaPlugin):
+class CameAIPlugin(NapthaPlugin):
     
     @property
     def framework(self) -> str:
