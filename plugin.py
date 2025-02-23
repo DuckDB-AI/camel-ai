@@ -4,7 +4,7 @@ from importlib.metadata import version
 from typing import List, Dict
 from packaging.version import parse
 from naptha_sdk.plugins.core import NapthaPlugin
-from jinja2 import Template  # Added import for Jinja2
+from jinja2 import Template
 
 class CameAIPlugin(NapthaPlugin):
     
@@ -41,8 +41,9 @@ class CameAIPlugin(NapthaPlugin):
         return SpecifierSet(spec)
     
     def detect_requirements(self, imports: List[str]) -> bool:
-        """Check if any langchain packages are imported"""
-        return any(imp.startswith(tuple(self.supported_versions.keys())) for imp in imports)
+        """Check if any camel-ai related imports are present"""
+        # Check for imports starting with 'camel.'
+        return any(imp.startswith("camel.") for imp in imports)
     
     def get_compatible_versions(self, dependencies: Dict[str, str]) -> Dict[str, str]:
         """Find matching version combination from metadata"""

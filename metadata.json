@@ -2,6 +2,7 @@
     "plugin_type": "framework",
     "name": "camel-ai",
     "supported_decorators": ["agent", "chain", "tool"],
+    "import_prefixes": ["camel"],
     "tested_package_and_python_versions": [
         {
             "template": "versions/v0.2.20/template.jinja",
